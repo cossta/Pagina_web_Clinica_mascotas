@@ -1,34 +1,33 @@
 $(function(){
-    agregar();
-    editar();
+    add_ower();
+    // editar();
 })
 
-function agregar(){
-    $('#add').on('click',function(ev){
+function add_ower(){   
+    $('#add-owner').click(function(ev){
         ev.preventDefault();
-        var nombre = $('input[id=nombre]');
-        var apellido = $('input[id=apellido]');
-        $('#lista').append(
+         var name = $('input[id=name_owner]');
+         var surname = $('input[id=surname_owner]');
+         var adress = $('input[id=adress_owner]');
+         var telephone = $('input[id=telephone_owner]');
+         $('#body-table-owner').append(
             "<tr>"+
-                "<td>"+nombre.val()+"</td>"+               
-                "<td>"+apellido.val()+"</td>"+
-                "<td><button name='editar' class='editar'>Editar</button></td>"+
+                "<td>"+name.val()+"</td>"+               
+                "<td>"+surname.val()+"</td>"+
+                "<td>"+adress.val()+"</td>"+
+                "<td>"+telephone.val()+"</td>"+
+                "<td><button name='add-pet' class='add_pet btn btn-outline-secondary'>agregar mascota</button></td>"+
             "</tr>"
         );
-        nombre.val(null);
-        apellido.val(null);
-    })   
-}
-
-function editar(){
-    $('lista').on('click','editar',function(ev){
-        ev.preventDefault();
-        var tr = $(this).closest('tr');
-        var tdNombre = tr.childer('td:nth-child(1)');
-        var tdApellido = tr.childer('td:nth-child(2)');
-        var tdEditar = tr.childer('td:nth-child(3)');
-        tdNombre.html("input id='txtnombre' value='"+tdNombre+"'/>");
-        tdApellido.html("input id='txtapellido' value='"+tdApellido+"'/>");
-        tdEditar.html("<button class='guardar'>Guardar</button>");
+         name.val(null);
+         surname.val(null);
+         adress.val(null);
+         telephone.val(null);
     });
 }
+
+
+    // hola();
+    // add_owner();
+
+
